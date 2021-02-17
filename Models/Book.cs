@@ -14,14 +14,18 @@ namespace OnlineBookstoreApp.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string AuthorFirst { get; set; }
+        public string? AuthorMiddle { get; set; }
+        [Required]
+        public string AuthorLast { get; set; }
         [Required]
         public string Publisher { get; set; }
         [Required]
         [RegularExpression(@"^(?= (?:\D *\d){10}(?:(?:\D*\d){3})?$)[\d-]+$", ErrorMessage = "Invalid ISBN format")]
         public string ISBN { get; set; }
         [Required]
-        public string MainCategory { get; set; }
+        public string Classification { get; set; }
+        public string Category { get; set; }
         [Required]
         public float Price { get; set; }
     }

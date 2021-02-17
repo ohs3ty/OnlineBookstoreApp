@@ -13,12 +13,13 @@
             <div class="row">
                 @foreach (var b in Model)
                 { 
-                    <div class="col-sm">
+                    <div class="col-3">
                         <h4>@b.Title</h4>
-                        <p>Author: @b.Author</p>
+                        <p>Author: @b.AuthorFirst @b.AuthorLast</p>
                         <p>Publisher: @b.Publisher</p>
                         <p>ISBN: @b.ISBN</p>
-                        <p>Main Category: @b.MainCategory</p>
+                        <p>Classification: @b.Classification</p>
+                        <p>Category: @b.Category</p>
                         <p>Price: $@b.Price</p>
                     </div>
                   }
