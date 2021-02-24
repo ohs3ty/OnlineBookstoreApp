@@ -20,7 +20,8 @@ namespace OnlineBookstoreApp.Migrations
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<float>(type: "real", nullable: false)
+                    Price = table.Column<float>(type: "real", nullable: false),
+                    NumPages = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

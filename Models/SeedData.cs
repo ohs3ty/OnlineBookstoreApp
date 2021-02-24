@@ -33,6 +33,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Fiction",
                         Category = "Classic",
                         Price = 9.95f,
+                        NumPages = 1488,
                     },
 
                     new Book
@@ -46,6 +47,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 14.58f,
+                        NumPages = 944,
                     },
 
                     new Book
@@ -58,6 +60,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 21.45f,
+                        NumPages = 832,
                     },
 
                     new Book
@@ -71,6 +74,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 11.61f,
+                        NumPages = 864,
                     },
 
                     new Book
@@ -83,6 +87,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Historical",
                         Price = 13.33f,
+                        NumPages = 528,
                     },
 
                     new Book
@@ -95,7 +100,8 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Fiction",
                         Category = "Historical Fiction",
                         Price = 15.95f,
-                    }, 
+                        NumPages = 288,
+                    },
 
                     new Book
                     {
@@ -107,6 +113,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 14.99f,
+                        NumPages = 304,
                     },
 
                     new Book
@@ -119,6 +126,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 21.66f,
+                        NumPages = 240,
                     },
 
                     new Book
@@ -131,6 +139,7 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Non-Fiction",
                         Category = "Business",
                         Price = 29.16f,
+                        NumPages = 400,
                     },
 
                     new Book
@@ -143,9 +152,51 @@ namespace OnlineBookstoreApp.Models
                         Classification = "Fiction",
                         Category = "Thriller",
                         Price = 15.03f,
+                        NumPages = 642,
+                    },
+
+                    new Book
+                    {
+                        Title = "The Mysterious Benedict Society",
+                        AuthorFirst = "Trenton",
+                        AuthorMiddle = "Lee",
+                        AuthorLast = "Stewart",
+                        Publisher = "Little, Brown and Company",
+                        ISBN = "978-0316464918",
+                        Classification = "Fiction",
+                        Category = "Adventure",
+                        Price = 9.83f,
+                        NumPages = 485,
+                    },
+
+                    new Book
+                    {
+                        Title = "Harry Potter and the Deathly Hallows",
+                        AuthorFirst = "J.",
+                        AuthorMiddle = "K.",
+                        AuthorLast = "Rowling",
+                        Publisher = "Bloomsbury Publishing",
+                        ISBN = "978-0739360385",
+                        Classification = "Fiction",
+                        Category = "Fantasy",
+                        Price = 10.49f,
+                        NumPages = 607,
+                    },
+
+                    new Book
+                    {
+                        Title = "The Westing Game",
+                        AuthorFirst = "Ellen",
+                        AuthorLast = "Raskin",
+                        Publisher = "E. P. Dutton",
+                        ISBN = "978-0142401200",
+                        Classification = "Fiction",
+                        Category = "Mystery",
+                        Price = 7.99f,
+                        NumPages = 216,
                     }
 
-                    );
+                    ) ;
             context.SaveChanges();
             }
 

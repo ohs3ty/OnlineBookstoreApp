@@ -28,5 +28,7 @@ namespace OnlineBookstoreApp.Models
         public string Category { get; set; }
         [Required]
         public float Price { get; set; }
+        [Required]
+        public int NumPages { get; set; }
     }
 }
