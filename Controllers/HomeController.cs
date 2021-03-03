@@ -39,7 +39,8 @@ namespace OnlineBookstoreApp.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
+                    TotalNumItems = category == null ?_repository.Books.Count() :
+                    _repository.Books.Where(x=>x.Category == category).Count()
                 },
 
                 CurrentCategory = category
