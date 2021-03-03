@@ -24,13 +24,14 @@ namespace OnlineBookstoreApp.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
 
             //SQL/Linq
             return View(new BookListViewModel
             {
                 Books = _repository.Books
+                    .Where(b => category == null || b.Category == category)
                     .OrderBy(b => b.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
@@ -39,7 +40,9 @@ namespace OnlineBookstoreApp.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalNumItems = _repository.Books.Count()
-                }
+                },
+
+                CurrentCategory = category
 
             });
                 

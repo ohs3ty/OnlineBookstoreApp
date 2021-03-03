@@ -9,6 +9,8 @@ namespace OnlineBookstoreApp.Models.ViewModels
     {
         public IEnumerable<Book> Books { get; set; }
         public PagingInfoClass PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
+
 
     }
 }

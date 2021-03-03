@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    
+}
+
+@model Book
+
+<!-- each book summary will be found in this page -->
+<div class="card m-3 border-secondary">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <h5 class="card-subtitle text-muted">@Model.AuthorFirst @Model.AuthorLast</h5><br />
+        <div class="card-text text-sm-left">
+            <div class="row no-gutters">
+                <p class="col-3">
+                    <span class="text-muted">Publisher:</span>
+                    <br />@Model.Publisher
+                </p>
+                <p class="col-3">
+                    <span class="text-muted">ISBN:</span>
+                    <br />@Model.ISBN
+                </p>
+                <p class="col-3">
+                    <span class="text-muted">Classification:</span>
+                    <br />@Model.Classification
+                </p>
+            </div>
+            <div class="row no-gutters">
+                <p class="col-3">
+                    <span class="text-muted">Category:</span>
+                    <br />@Model.Category
+                </p>
+                <p class="col-3">
+                    <span class="text-muted">Price: </span>
+                    <br />$@Model.Price
+                </p>
+                <p class="col-3">
+                    <span class="text-muted">Pages: </span>
+                    <br />@Model.NumPages pages
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

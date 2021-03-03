@@ -4,7 +4,9 @@
 @model BookListViewModel
 
 <!--Bookstore Home Page -->
-<!--Shayna Oh, Assignment 6, 2/24/2021-->
+<!--Shayna Oh, Assignment 7, 3/3/2021-->
+
+<!--View Components: add small amount of resusable content-->
 
 <!--New bootstrap: border-secondary, m-3, text-muted -->
 
@@ -14,40 +16,18 @@
 <br /><br />
 
     <div>
-        <div class="container">
+        <div class="container"> 
                     @foreach (var b in Model.Books) 
                     {
-                        <div class="card m-3 border-secondary">
-                            <div class="card-body">
-                                <h4 class="card-title">@b.Title</h4>
-                                <h5 class="card-subtitle text-muted">@b.AuthorFirst @b.AuthorLast</h5><br />
-                                <div class="card-text text-sm-left">
-                                    <div class="row no-gutters">
-                                        <p class="col-3"><span class="text-muted">Publisher:</span> 
-                                            <br />@b.Publisher</p>
-                                        <p class="col-3"><span class="text-muted">ISBN:</span> 
-                                            <br />@b.ISBN</p>
-                                        <p class="col-3"><span class="text-muted">Classification:</span>
-                                            <br />@b.Classification</p>
-                                    </div>
-                                    <div class="row no-gutters">
-                                        <p class="col-3"><span class="text-muted">Category:</span>
-                                            <br />@b.Category</p>
-                                        <p class="col-3"><span class="text-muted">Price: </span>
-                                            <br />$@b.Price</p>
-                                        <p class="col-3"><span class="text-muted">Pages: </span>
-                                            <br />@b.NumPages pages</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        <!-- Book summaries will be found in the Book Summary view -->
+                        <partial name="BookSummary" model="b" />
                     }
             <div page-model="@Model.PagingInfo" page-action="Index" 
                  page-classes-enabled="true" 
                  page-class="btn"
                  page-class-normal="btn-outline-dark"
                  page-class-selected="btn-primary"
-                 class="text-center btn-group pull-right m-1"></div>
+                 class="text-center btn-group pull-right m-1"
+                 page-url-category="@Model.CurrentCategory"></div>
         </div>
     </div>
