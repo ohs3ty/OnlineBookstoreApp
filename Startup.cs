@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OnlineBookstoreApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace OnlineBookstoreApp
 {
@@ -31,6 +32,12 @@ namespace OnlineBookstoreApp
                object p = options.UseSqlite(Configuration["ConnectionStrings:BookstoreConnection"]);
            });
             services.AddScoped<iBookRepository, EFBookRepository>();
+
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +55,7 @@ namespace OnlineBookstoreApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -80,6 +87,8 @@ namespace OnlineBookstoreApp
                     new {Controller = "Home", action = "Index"});
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
