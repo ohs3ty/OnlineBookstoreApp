@@ -65,13 +65,13 @@ namespace OnlineBookstoreApp
                 //both page and category 
                 endpoints.MapControllerRoute(
                     "categorypage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 //only page 
                 endpoints.MapControllerRoute(
                     "page",
-                    "Books/{page:int}",
+                    "Books/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 //if they give us only the category
@@ -83,7 +83,7 @@ namespace OnlineBookstoreApp
                 //endpoints /P1 or /P2
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "P{page}",
+                    "P{pageNum}",
                     new {Controller = "Home", action = "Index"});
 
                 endpoints.MapDefaultControllerRoute();
