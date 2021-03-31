@@ -46,7 +46,7 @@ namespace OnlineBookstoreApp.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 //Build tag
-                TagBuilder tag = new TagBuilder("a");
+                TagBuilder tag = new TagBuilder("a");   
 
                 PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, 
